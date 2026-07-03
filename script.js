@@ -1,61 +1,55 @@
-body{
+let value = 0;
 
-margin:0;
-background:#000814;
-font-family:Courier New, monospace;
-display:flex;
-justify-content:center;
-align-items:center;
-height:100vh;
-color:white;
+const progress = document.getElementById("progress");
+const percent = document.getElementById("percent");
+const joke = document.getElementById("joke");
 
-}
+const steps = [10,28,54,87,99,100];
 
-.container{
+let i=0;
 
-width:90%;
-max-width:500px;
-text-align:center;
+function loading(){
+
+if(i>=steps.length){
+
+return;
 
 }
 
-h1{
+value=steps[i];
 
-color:#49b7ff;
-margin-bottom:30px;
+progress.style.width=value+"%";
 
-}
+percent.innerHTML=value+"%";
 
-.bar{
+if(value==99){
 
-width:100%;
-height:22px;
-background:#222;
-border-radius:30px;
-overflow:hidden;
+joke.innerHTML="Still 99%...<br>Just like your replies. 🙂";
 
-}
+setTimeout(()=>{
 
-#progress{
+i++;
 
-width:0%;
-height:100%;
-background:#49b7ff;
-transition:0.5s;
+loading();
+
+},4000);
+
+return;
 
 }
 
-#percent{
+if(value==100){
 
-font-size:28px;
-margin-top:20px;
+joke.innerHTML="Connection Established.";
+
+return;
+
+}
+
+i++;
+
+setTimeout(loading,1000);
 
 }
 
-#joke{
-
-margin-top:25px;
-color:#49b7ff;
-font-size:18px;
-
-}
+loading();
