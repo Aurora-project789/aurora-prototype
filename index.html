@@ -1,1 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mission Unforgettable</title>
 
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+background:#050816;
+color:#6bd6ff;
+font-family:Courier New,monospace;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+overflow:hidden;
+}
+
+.container{
+width:90%;
+max-width:600px;
+text-align:center;
+}
+
+h1{
+font-size:34px;
+letter-spacing:3px;
+margin-bottom:25px;
+}
+
+#status{
+color:white;
+font-size:18px;
+margin-bottom:25px;
+}
+
+.bar{
+width:100%;
+height:22px;
+background:#222;
+border-radius:30px;
+overflow:hidden;
+}
+
+#progress{
+width:0%;
+height:100%;
+background:#39b9ff;
+transition:.5s;
+}
+
+#percent{
+margin-top:20px;
+font-size:28px;
+}
+
+#joke{
+margin-top:20px;
+font-size:18px;
+color:#7ddcff;
+min-height:40px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>AURORA SYSTEM</h1>
+
+<div id="status">
+Preparing Birthday Surprise...
+</div>
+
+<div class="bar">
+<div id="progress"></div>
+</div>
+
+<div id="percent">0%</div>
+
+<div id="joke"></div>
+
+</div>
+
+<script>
+
+const steps=[5,16,29,43,58,71,84,95,99,100];
+
+let i=0;
+
+function loading(){
+
+let value=steps[i];
+
+document.getElementById("progress").style.width=value+"%";
+
+document.getElementById("percent").innerHTML=value+"%";
+
+if(value===99){
+
+document.getElementById("joke").innerHTML=
+"Still 99%...<br>Just like your late replies. 😂";
+
+setTimeout(function(){
+
+i++;
+
+loading();
+
+},4000);
+
+return;
+
+}
+
+if(value===100){
+
+document.getElementById("status").innerHTML=
+"Connection Established ✔";
+
+document.getElementById("joke").innerHTML=
+"Opening Secure Birthday Files...";
+
+setTimeout(function(){
+
+window.location.href="password.html";
+
+},2000);
+
+return;
+
+}
+
+i++;
+
+setTimeout(loading,700);
+
+}
+
+loading();
+
+</script>
+
+</body>
+</html>
