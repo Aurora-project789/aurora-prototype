@@ -1,1 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
 
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Mission Unforgettable</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+background:#050816;
+color:white;
+font-family:Courier New,monospace;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+overflow:hidden;
+}
+
+.container{
+width:90%;
+max-width:800px;
+text-align:center;
+animation:fadeIn 1s;
+}
+
+@keyframes fadeIn{
+from{
+opacity:0;
+transform:translateY(20px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+h1{
+font-size:40px;
+color:#39b9ff;
+margin-bottom:30px;
+letter-spacing:3px;
+}
+
+.type{
+font-size:22px;
+line-height:2;
+min-height:260px;
+color:white;
+padding:20px;
+}
+
+button{
+padding:12px 35px;
+font-size:18px;
+font-weight:bold;
+background:#39b9ff;
+border:none;
+border-radius:8px;
+cursor:pointer;
+display:none;
+margin-top:30px;
+}
+
+button:hover{
+background:#63d1ff;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>MISSION UNFORGETTABLE</h1>
+
+<div class="type" id="story"></div>
+
+<button id="next"
+onclick="window.location.href='achievement.html'">
+
+OPEN ACHIEVEMENTS →
+
+</button>
+
+<script>
+
+const lines=[
+
+"Mission Status : ACTIVE",
+
+"Welcome Agent.",
+
+"You have successfully unlocked the birthday files.",
+
+"This mission contains memories, smiles and a few surprises.",
+
+"[YOUR STORY WILL COME HERE]",
+
+"Good Luck..."
+
+];
+
+let i=0;
+
+function typing(){
+
+if(i<lines.length){
+
+document.getElementById("story").innerHTML+=lines[i]+"<br><br>";
+
+i++;
+
+setTimeout(typing,1200);
+
+}else{
+
+document.getElementById("next").style.display="inline-block";
+
+}
+
+}
+
+typing();
+
+</script>
+
+</div>
+
+</body>
+  </html>
