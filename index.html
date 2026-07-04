@@ -169,33 +169,7 @@ UNLOCK
 <div id="result"></div>
 
 </div>
-  
-<div id="confidential" style="display:none;width:90%;max-width:650px;text-align:center;animation:fadeIn 1s;">
 
-<h2 style="color:#39b9ff;">🔒 CONFIDENTIAL DOSSIER</h2>
-
-<hr style="margin:20px 0;border-color:#39b9ff;">
-
-<p><b>Subject:</b> Sir G</p>
-
-<p><b>Status:</b> Mr. Kharoos</p>
-
-<p><b>Occupation:</b> Professional Poet</p>
-
-<p><b>Threat Level:</b> Medium</p>
-
-<p><b>Weakness:</b> Gets annoyed when called "Mr. Kharoos"</p>
-
-<p><b>Current Mission:</b> Have the happiest birthday ever. 🎂</p>
-
-<br>
-
-<button id="nextBtn">
-NEXT →
-</button>
-
-</div>
-  
 <script>
 
 const steps=[5,16,29,43,58,71,84,95,99,100];
@@ -255,22 +229,15 @@ if(password==="2206"){
 
 document.getElementById("result").innerHTML="✅ ACCESS GRANTED";
 
-setTimeout(function(){
-
-document.getElementById("passwordScreen").style.display="none";
-
-document.getElementById("confidential").style.display="block";
-
-},1500);
-
 }else{
 
 document.getElementById("result").innerHTML="❌ ACCESS DENIED";
 
 }
+
 }
 
 </script>
 
 </body>
-</html>
+  </html>
