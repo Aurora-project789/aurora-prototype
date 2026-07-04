@@ -7,7 +7,70 @@
 <title>Mission Unforgettable</title>
 
 <style>
+  
+/* PASSWORD SCREEN */
 
+#passwordScreen{
+display:none;
+width:90%;
+max-width:600px;
+text-align:center;
+animation:fadeIn 1s;
+}
+
+#passwordScreen h2{
+color:#39b9ff;
+margin-bottom:20px;
+letter-spacing:2px;
+}
+
+#passwordInput{
+width:220px;
+padding:12px;
+font-size:20px;
+text-align:center;
+background:#111;
+border:2px solid #39b9ff;
+color:white;
+border-radius:8px;
+outline:none;
+margin-top:20px;
+}
+
+button{
+margin-top:20px;
+padding:12px 30px;
+font-size:18px;
+background:#39b9ff;
+border:none;
+border-radius:8px;
+cursor:pointer;
+font-weight:bold;
+}
+
+button:hover{
+background:#5cc8ff;
+}
+
+#result{
+margin-top:20px;
+font-size:20px;
+color:white;
+}
+
+@keyframes fadeIn{
+
+from{
+opacity:0;
+transform:translateY(20px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+
+  }
 *{
 margin:0;
 padding:0;
@@ -92,7 +155,28 @@ Preparing Birthday Surprise...
 <div id="joke"></div>
 
 </div>
+  
+<div id="passwordScreen">
 
+<h2>RESTRICTED ACCESS</h2>
+
+<p>Enter Access Code</p>
+
+<input
+type="password"
+id="passwordInput"
+placeholder="2206">
+
+<br>
+
+<button onclick="checkPassword()">
+UNLOCK
+</button>
+
+<div id="result"></div>
+
+</div>
+  
 <script>
 
 let steps=[5,16,29,43,58,71,84,95,99,100];
@@ -127,9 +211,19 @@ document.getElementById("status").innerHTML=
 "Connection Established ✔";
 
 document.getElementById("joke").innerHTML=
-"Preparing secure channel...";
+"Accessing Restricted Birthday Files...";
+
+setTimeout(function(){
+
+document.querySelector(".container").style.display="none";
+
+document.getElementById("passwordScreen").style.display="block";
+
+},2000);
 
 return;
+
+  }
 
 }
 
@@ -140,7 +234,25 @@ setTimeout(loading,700);
 }
 
 loading();
+function checkPassword(){
 
+let password=
+document.getElementById("passwordInput").value;
+
+if(password=="2206"){
+
+document.getElementById("result").innerHTML=
+"✅ ACCESS GRANTED";
+
+}else{
+
+document.getElementById("result").innerHTML=
+"❌ ACCESS DENIED";
+
+}
+
+  }
+  
 </script>
 
 </body>
