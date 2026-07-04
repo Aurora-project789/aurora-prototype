@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>System Error</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+background:#001a33;
+color:white;
+font-family:Courier New,monospace;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+overflow:hidden;
+}
+
+.container{
+width:90%;
+max-width:700px;
+text-align:center;
+}
+
+h1{
+font-size:42px;
+color:#4fc3ff;
+margin-bottom:30px;
+}
+
+#error{
+font-size:22px;
+line-height:2;
+min-height:180px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>SYSTEM ERROR</h1>
+
+<div id="error"></div>
+
+<script>
+
+const messages=[
+
+"ERROR CODE : BDAY-404",
+
+"Scanning birthday memories...",
+
+"Too many memories detected...",
+
+"Recovering files...",
+
+"Recovery Successful ✅",
+
+"Opening Mission Unforgettable..."
+
+];
+
+let i=0;
+
+function typeMessage(){
+
+if(i<messages.length){
+
+document.getElementById("error").innerHTML+=messages[i]+"<br><br>";
+
+i++;
+
+setTimeout(typeMessage,1200);
+
+}else{
+
+setTimeout(function(){
+
+window.location.href="mission.html";
+
+},2500);
+
+}
+
+}
+
+typeMessage();
+
+</script>
+
+</div>
+
+</body>
+</html>
