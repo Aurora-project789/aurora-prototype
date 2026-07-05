@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>System Error</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+
+font-family:'Poppins',sans-serif;
+
+background:
+linear-gradient(180deg,#02050d,#07142d,#0d2044);
+
+height:100vh;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+overflow:hidden;
+
+color:white;
+
+}
+
+.glow{
+
+position:absolute;
+
+width:450px;
+
+height:450px;
+
+background:#00c6ff22;
+
+border-radius:50%;
+
+filter:blur(120px);
+
+top:-170px;
+
+left:-120px;
+
+z-index:-1;
+
+}
+
+.glow2{
+
+position:absolute;
+
+width:380px;
+
+height:380px;
+
+background:#1f6fff22;
+
+border-radius:50%;
+
+filter:blur(100px);
+
+bottom:-120px;
+
+right:-120px;
+
+z-index:-1;
+
+}
+
+.container{
+
+width:92%;
+
+max-width:850px;
+
+text-align:center;
+
+padding:40px;
+
+animation:fade 1s ease;
+
+}
+
+@keyframes fade{
+
+from{
+
+opacity:0;
+
+transform:scale(.95);
+
+}
+
+to{
+
+opacity:1;
+
+transform:scale(1);
+
+}
+
+}
+
+h1{
+
+font-size:56px;
+
+color:#ff5b5b;
+
+letter-spacing:3px;
+
+margin-bottom:25px;
+
+text-shadow:0 0 18px rgba(255,91,91,.45);
+
+}
+
+#terminal{
+
+font-size:24px;
+
+line-height:2;
+
+color:#FFFFFF;
+
+min-height:320px;
+
+}
+
+```
+.errorBox{
+
+background:rgba(255,255,255,.04);
+
+border:2px solid rgba(255,91,91,.35);
+
+border-radius:18px;
+
+padding:30px;
+
+box-shadow:0 0 25px rgba(255,91,91,.15);
+
+}
+
+.status{
+
+color:#FFE66D;
+
+font-weight:600;
+
+}
+
+.cursor{
+
+display:inline-block;
+
+animation:blink .8s infinite;
+
+}
+
+@keyframes blink{
+
+0%,50%{
+
+opacity:1;
+
+}
+
+51%,100%{
+
+opacity:0;
+
+}
+
+}
+
+.footer{
+
+margin-top:35px;
+
+font-size:18px;
+
+color:#9fdcff;
+
+letter-spacing:1px;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="glow"></div>
+
+<div class="glow2"></div>
+
+<div class="container">
+
+<h1>SYSTEM ERROR</h1>
+
+<div class="errorBox">
+
+<div id="terminal">
+
+</div>
+
+</div>
+
+<div class="footer">
+
+Recovery Engine v2.0 • Aurora System
+
+</div>
+
+<script>
+
+const messages=[
+
+"ERROR CODE : BDAY-404",
+
+"Scanning birthday database...",
+
+"Locating happy memories...",
+
+"Decrypting emotional files...",
+
+"<span class='status'>Birthday detected.</span>",
+
+"Recovering surprise package...",
+
+"<span class='status'>Recovery Successful ✅</span>",
+
+"Launching Mission Unforgettable..."
+
+];
+
+let i=0;
+
+function typeLines(){
+
+if(i<messages.length){
+
+document.getElementById("terminal").innerHTML+=
+
+messages[i]+" <span class='cursor'>|</span><br><br>";
+
+i++;
+
+setTimeout(typeLines,1100);
+
+}else{
+
+setTimeout(function(){
+
+window.location.href="mission.html";
+
+},2500);
+
+}
+
+}
+
+typeLines();
+
+</script>
+
+<footer
+
+style="
+
+position:absolute;
+
+bottom:20px;
+
+left:50%;
+
+transform:translateX(-50%);
+
+font-size:15px;
+
+color:#8fb9d8;
+
+letter-spacing:1px;
+
+opacity:.85;
+
+">
+
+SYSTEM RECOVERY • PLEASE WAIT
+
+</footer>
+  
+</div>
+
+</body>
+
+</html> 
