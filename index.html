@@ -1,9 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Mission Unforgettable</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
 
@@ -14,59 +24,244 @@ box-sizing:border-box;
 }
 
 body{
-background:#050816;
-color:#6bd6ff;
-font-family:Courier New,monospace;
+
+font-family:'Poppins',sans-serif;
+
+background:
+linear-gradient(180deg,#030712,#071a35,#0a2447);
+
 display:flex;
+
 justify-content:center;
+
 align-items:center;
+
 height:100vh;
+
 overflow:hidden;
+
+color:white;
+
 }
 
 .container{
-width:90%;
-max-width:600px;
+
+width:92%;
+
+max-width:760px;
+
 text-align:center;
+
+padding:35px;
+
+animation:fade 1.2s ease;
+
+}
+
+@keyframes fade{
+
+from{
+
+opacity:0;
+
+transform:translateY(25px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+.logo{
+
+font-size:60px;
+
+margin-bottom:15px;
+
 }
 
 h1{
-font-size:34px;
-letter-spacing:3px;
-margin-bottom:25px;
+
+font-size:54px;
+
+font-weight:700;
+
+color:#FFD54F;
+
+letter-spacing:4px;
+
+margin-bottom:18px;
+
+text-shadow:
+
+0 0 15px rgba(255,213,79,.35);
+
 }
 
-#status{
-color:white;
-font-size:18px;
-margin-bottom:25px;
+.subtitle{
+
+font-size:24px;
+
+color:#4FC3F7;
+
+margin-bottom:35px;
+
+font-weight:600;
+
+}
+
+.status{
+
+font-size:24px;
+
+color:#FFFFFF;
+
+margin-bottom:28px;
+
+min-height:35px;
+
 }
 
 .bar{
+
 width:100%;
-height:22px;
-background:#222;
-border-radius:30px;
+
+height:26px;
+
+background:#13233f;
+
+border-radius:40px;
+
 overflow:hidden;
+
+box-shadow:
+
+0 0 18px rgba(79,195,247,.18);
+
 }
 
-#progress{
+.progress{
+
 width:0%;
+
 height:100%;
-background:#39b9ff;
+
+background:
+linear-gradient(90deg,#00C6FF,#3AAEFF,#7BD3FF);
+
 transition:.5s;
+
+border-radius:40px;
+
 }
 
-#percent{
-margin-top:20px;
-font-size:28px;
+.percent{
+
+font-size:34px;
+
+font-weight:700;
+
+margin-top:25px;
+
+color:#FFE66D;
+
 }
 
-#joke{
-margin-top:20px;
-font-size:18px;
-color:#7ddcff;
-min-height:40px;
+.joke{
+
+font-size:22px;
+
+margin-top:28px;
+
+line-height:1.7;
+
+color:#FFFFFF;
+
+min-height:70px;
+
+}
+.button{
+
+margin-top:35px;
+
+padding:15px 42px;
+
+font-size:22px;
+
+font-weight:600;
+
+border:none;
+
+border-radius:50px;
+
+background:linear-gradient(90deg,#00C6FF,#3AAEFF);
+
+color:white;
+
+box-shadow:0 0 25px rgba(0,198,255,.35);
+
+transition:.3s;
+
+cursor:pointer;
+
+}
+
+.button:hover{
+
+transform:translateY(-3px) scale(1.03);
+
+box-shadow:0 0 35px rgba(0,198,255,.6);
+
+}
+
+.glow{
+
+position:absolute;
+
+width:420px;
+
+height:420px;
+
+background:#1f6fff33;
+
+border-radius:50%;
+
+filter:blur(100px);
+
+top:-140px;
+
+left:-120px;
+
+z-index:-1;
+
+}
+
+.glow2{
+
+position:absolute;
+
+width:350px;
+
+height:350px;
+
+background:#00c6ff22;
+
+border-radius:50%;
+
+filter:blur(90px);
+
+bottom:-120px;
+
+right:-120px;
+
+z-index:-1;
+
 }
 
 </style>
@@ -75,21 +270,66 @@ min-height:40px;
 
 <body>
 
+<div class="glow"></div>
+
+<div class="glow2"></div>
+
 <div class="container">
 
-<h1>AURORA SYSTEM</h1>
+<div class="logo">
 
-<div id="status">
+🛰️
+
+</div>
+
+<h1>
+
+AURORA SYSTEM
+
+</h1>
+
+<div class="subtitle">
+
+Secure Birthday Network
+
+</div>
+
+<div class="status" id="status">
+
 Preparing Birthday Surprise...
+
 </div>
 
 <div class="bar">
-<div id="progress"></div>
+
+<div
+
+class="progress"
+
+id="progress">
+
 </div>
 
-<div id="percent">0%</div>
+</div>
 
-<div id="joke"></div>
+<div
+
+class="percent"
+
+id="percent">
+
+0%
+
+</div>
+
+<div
+
+class="joke"
+
+id="joke">
+
+</div>
+</div>
 
 </div>
 
@@ -97,11 +337,11 @@ Preparing Birthday Surprise...
 
 const steps=[5,16,29,43,58,71,84,95,99,100];
 
-let i=0;
+let index=0;
 
-function loading(){
+function startLoading(){
 
-let value=steps[i];
+let value=steps[index];
 
 document.getElementById("progress").style.width=value+"%";
 
@@ -110,13 +350,14 @@ document.getElementById("percent").innerHTML=value+"%";
 if(value===99){
 
 document.getElementById("joke").innerHTML=
-"Still 99%...<br>Just like your late replies. 😂";
+
+"⏳ Still 99%...<br><span style='color:#FFE66D;'>Just like your late replies. 😂</span>";
 
 setTimeout(function(){
 
-i++;
+index++;
 
-loading();
+startLoading();
 
 },4000);
 
@@ -127,30 +368,57 @@ return;
 if(value===100){
 
 document.getElementById("status").innerHTML=
-"Connection Established ✔";
+
+"✅ Connection Established";
 
 document.getElementById("joke").innerHTML=
-"Opening Secure Birthday Files...";
+
+"Decrypting Birthday Files...";
 
 setTimeout(function(){
 
 window.location.href="password.html";
 
-},2000);
+},2500);
 
 return;
 
 }
 
-i++;
+index++;
 
-setTimeout(loading,700);
+setTimeout(startLoading,700);
 
 }
 
-loading();
-
+startLoading();
 </script>
 
+<footer
+
+style="
+
+position:absolute;
+
+bottom:20px;
+
+left:50%;
+
+transform:translateX(-50%);
+
+font-size:15px;
+
+color:#8fb9d8;
+
+letter-spacing:1px;
+
+opacity:.85;
+
+">
+
+MISSION UNFORGETTABLE • Secure Birthday Network
+
+</footer>
 </body>
-</html>
+
+  </html>  
