@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Birthday Sir G</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+
+margin:0;
+
+padding:0;
+
+box-sizing:border-box;
+
+}
+
+body{
+
+font-family:'Poppins',sans-serif;
+
+background:linear-gradient(180deg,#06142b,#102d63,#1b4d8f);
+
+min-height:100vh;
+
+overflow:hidden;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+color:white;
+
+text-align:center;
+
+}
+
+.container{
+
+width:92%;
+
+max-width:900px;
+
+padding:40px;
+
+position:relative;
+
+z-index:2;
+
+animation:fade 1.2s ease;
+
+}
+
+@keyframes fade{
+
+from{
+
+opacity:0;
+
+transform:scale(.95);
+
+}
+
+to{
+
+opacity:1;
+
+transform:scale(1);
+
+}
+
+}
+
+h1{
+
+font-size:64px;
+
+color:#FFD54F;
+
+text-shadow:0 0 20px rgba(255,213,79,.45);
+
+margin-bottom:20px;
+
+}
+
+.subtitle{
+
+font-size:28px;
+
+color:#FFFFFF;
+
+line-height:1.8;
+
+margin-bottom:35px;
+
+}
+
+.cake{
+
+font-size:120px;
+
+margin:20px 0;
+
+animation:bounce 2s infinite;
+
+}
+
+@keyframes bounce{
+
+0%,100%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-15px);
+
+}
+
+}
+
+.balloon{
+
+position:absolute;
+
+font-size:48px;
+
+animation:float 10s linear infinite;
+
+opacity:.95;
+
+}
+
+.b1{left:5%;animation-delay:0s;}
+.b2{left:18%;animation-delay:2s;}
+.b3{left:32%;animation-delay:4s;}
+.b4{left:48%;animation-delay:1s;}
+.b5{left:63%;animation-delay:3s;}
+.b6{left:78%;animation-delay:5s;}
+.b7{left:90%;animation-delay:2.5s;}
+
+@keyframes float{
+
+0%{
+
+transform:translateY(120vh);
+
+}
+
+100%{
+
+transform:translateY(-150px);
+
+}
+
+}
+
+.stars{
+
+position:absolute;
+
+width:100%;
+
+height:100%;
+
+top:0;
+
+left:0;
+
+pointer-events:none;
+
+}
+
+.star{
+
+position:absolute;
+
+width:4px;
+
+height:4px;
+
+background:white;
+
+border-radius:50%;
+
+animation:twinkle 2s infinite;
+
+}
+
+@keyframes twinkle{
+
+0%,100%{
+
+opacity:.2;
+
+transform:scale(.8);
+
+}
+
+50%{
+
+opacity:1;
+
+transform:scale(1.6);
+
+}
+
+}
+
+button{
+
+margin-top:40px;
+
+padding:18px 48px;
+
+font-size:22px;
+
+font-weight:600;
+
+border:none;
+
+border-radius:50px;
+
+background:linear-gradient(90deg,#00C6FF,#3AAEFF);
+
+color:white;
+
+cursor:pointer;
+
+transition:.3s;
+
+box-shadow:0 0 25px rgba(0,198,255,.35);
+
+}
+
+button:hover{
+
+transform:translateY(-3px);
+
+box-shadow:0 0 40px rgba(0,198,255,.6);
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="stars" id="stars"></div>
+
+<div class="balloon b1">🎈</div>
+<div class="balloon b2">🎈</div>
+<div class="balloon b3">🎈</div>
+<div class="balloon b4">🎈</div>
+<div class="balloon b5">🎈</div>
+<div class="balloon b6">🎈</div>
+<div class="balloon b7">🎈</div>
+
+<div class="container">
+
+<div class="cake">🎂</div>
+
+<h1>Happy Birthday Sir G! 🎉</h1>
+
+<div class="subtitle">
+
+Wishing you endless happiness, success, laughter and beautiful memories. 💙
+
+</div>
+
+<button
+
+onclick="window.location.href='missioncompleted.html'">
+
+🎁 End Mission →
+
+</button>
+
+</div>
+
+<audio
+
+id="bgMusic"
+
+autoplay
+
+loop>
+
+<source src="birthday.mp3" type="audio/mpeg">
+
+</audio>
+
+<script>
+
+const stars=document.getElementById("stars");
+
+for(let i=0;i<70;i++){
+
+const star=document.createElement("div");
+
+star.className="star";
+
+star.style.left=Math.random()*100+"%";
+
+star.style.top=Math.random()*100+"%";
+
+star.style.animationDelay=Math.random()*2+"s";
+
+stars.appendChild(star);
+
+}
+
+// 🎆 Fireworks
+setInterval(function(){
+
+const fire=document.createElement("div");
+
+fire.innerHTML="🎆";
+
+fire.style.position="fixed";
+
+fire.style.left=Math.random()*90+"%";
+
+fire.style.top=(10+Math.random()*60)+"%";
+
+fire.style.fontSize=(40+Math.random()*40)+"px";
+
+fire.style.pointerEvents="none";
+
+fire.style.animation="boom 1.2s forwards";
+
+document.body.appendChild(fire);
+
+setTimeout(function(){
+
+fire.remove();
+
+},1200);
+
+},800);
+
+const style=document.createElement("style");
+
+style.innerHTML=`
+
+@keyframes boom{
+
+0%{
+
+opacity:0;
+
+transform:scale(.2) rotate(0deg);
+
+}
+
+40%{
+
+opacity:1;
+
+transform:scale(1.5) rotate(180deg);
+
+}
+
+100%{
+
+opacity:0;
+
+transform:scale(2.8) rotate(360deg);
+
+}
+
+}
+
+`;
+
+document.head.appendChild(style);
+
+// Try to play music automatically
+const music=document.getElementById("bgMusic");
+
+music.volume=0.5;
+
+music.play().catch(function(){
+
+console.log("Autoplay blocked by browser.");
+
+});
+
+</script>
+
+<footer
+
+style="
+
+position:absolute;
+
+bottom:20px;
+
+left:50%;
+
+transform:translateX(-50%);
+
+font-size:15px;
+
+color:#D6EFFF;
+
+letter-spacing:1px;
+
+opacity:.85;
+
+">
+
+🎉 Celebrate Every Moment • Mission Unforgettable 🎉
+
+</footer>
+
+</div>
+
+</body>
+
+</html>  
