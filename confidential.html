@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Confidential Dossier</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+
+font-family:'Poppins',sans-serif;
+
+background:
+linear-gradient(180deg,#030712,#071a35,#0a2447);
+
+color:white;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+height:100vh;
+
+overflow:hidden;
+
+}
+
+.glow{
+
+position:absolute;
+
+width:420px;
+
+height:420px;
+
+background:#1f6fff33;
+
+border-radius:50%;
+
+filter:blur(110px);
+
+top:-150px;
+
+left:-120px;
+
+z-index:-1;
+
+}
+
+.glow2{
+
+position:absolute;
+
+width:360px;
+
+height:360px;
+
+background:#00c6ff22;
+
+border-radius:50%;
+
+filter:blur(100px);
+
+bottom:-120px;
+
+right:-120px;
+
+z-index:-1;
+
+}
+
+.card{
+
+width:92%;
+
+max-width:850px;
+
+background:rgba(10,24,50,.82);
+
+border:2px solid #3AAEFF;
+
+border-radius:18px;
+
+padding:35px;
+
+box-shadow:0 0 35px rgba(0,198,255,.18);
+
+animation:fade 1.2s ease;
+
+}
+
+@keyframes fade{
+
+from{
+
+opacity:0;
+
+transform:translateY(25px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+h1{
+
+text-align:center;
+
+font-size:50px;
+
+color:#FFD54F;
+
+letter-spacing:3px;
+
+margin-bottom:28px;
+
+text-shadow:0 0 15px rgba(255,213,79,.35);
+
+}
+.subtitle{
+
+text-align:center;
+
+font-size:24px;
+
+color:#4FC3F7;
+
+margin-bottom:35px;
+
+}
+
+.file{
+
+border:2px solid rgba(79,195,247,.25);
+
+border-radius:14px;
+
+padding:25px;
+
+background:rgba(255,255,255,.03);
+
+}
+
+.row{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+padding:14px 0;
+
+border-bottom:1px solid rgba(255,255,255,.08);
+
+font-size:22px;
+
+}
+
+.row:last-child{
+
+border-bottom:none;
+
+}
+
+.label{
+
+color:#4FC3F7;
+
+font-weight:600;
+
+}
+
+.value{
+
+color:#FFFFFF;
+
+font-weight:500;
+
+text-align:right;
+
+}
+
+.highlight{
+
+color:#FFE66D;
+
+font-weight:700;
+
+}
+
+button{
+
+display:block;
+
+margin:40px auto 0;
+
+padding:16px 42px;
+
+font-size:22px;
+
+font-weight:600;
+
+border:none;
+
+border-radius:50px;
+
+background:linear-gradient(90deg,#00C6FF,#3AAEFF);
+
+color:white;
+
+cursor:pointer;
+
+transition:.3s;
+
+box-shadow:0 0 20px rgba(0,198,255,.35);
+
+}
+
+button:hover{
+
+transform:translateY(-3px);
+
+box-shadow:0 0 35px rgba(0,198,255,.6);
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="glow"></div>
+
+<div class="glow2"></div>
+
+<div class="card">
+
+<h1>CONFIDENTIAL DOSSIER</h1>
+
+<div class="subtitle">
+
+Top Secret Birthday Intelligence
+
+</div>
+
+<div class="file">
+
+<div class="row">
+
+<span class="label">
+
+Subject
+
+</span>
+
+<span class="value">
+
+Sir G
+
+</span>
+
+</div>
+
+<div class="row">
+
+<span class="label">
+
+Code Name
+
+</span>
+
+<span class="value highlight">
+
+Mr. Kharoos 😎
+
+</span>
+
+</div>
+
+<div class="row">
+
+<span class="label">
+
+Profession
+
+</span>
+
+<span class="value">
+
+Certified Shayar ✍️
+
+</span>
+
+</div>
+
+<div class="row">
+
+<span class="label">
+
+Threat Level
+
+</span>
+
+<span class="value">
+
+Extremely Dangerous... to bad jokes 😂
+
+</span>
+
+</div>
+
+<div class="row">
+
+<span class="label">
+
+Mission Status
+
+</span>
+
+<span class="value highlight">
+
+Birthday Detected 🎂
+
+</span>
+
+</div>
+
+<div class="row">
+
+<span class="label">
+
+Current Objective
+
+</span>
+
+<span class="value">
+
+Make Him Smile 😊
+
+</span>
+
+</div>
+
+<div class="row">
+
+<span class="label">
+
+File Status
+
+</span>
+
+<span class="value highlight">
+
+VERIFIED ✅
+
+</span>
+
+</div>
+
+<button onclick="window.location.href='error.html'">
+
+Continue Mission →
+
+</button>
+
+</div>
+
+</div>
+
+<script>
+
+document.addEventListener("DOMContentLoaded",function(){
+
+const rows=document.querySelectorAll(".row");
+
+rows.forEach(function(row,index){
+
+row.style.opacity="0";
+
+row.style.transform="translateX(-20px)";
+
+setTimeout(function(){
+
+row.style.transition="all .5s ease";
+
+row.style.opacity="1";
+
+row.style.transform="translateX(0)";
+
+},index*180);
+
+});
+
+});
+
+</script>
+
+<footer
+
+style="
+
+position:absolute;
+
+bottom:20px;
+
+left:50%;
+
+transform:translateX(-50%);
+
+font-size:15px;
+
+color:#8fb9d8;
+
+letter-spacing:1px;
+
+opacity:.85;
+
+">
+
+CONFIDENTIAL • LEVEL 7 CLEARANCE
+
+</footer>
+
+</div>
+
+</body>
+
+</html>
