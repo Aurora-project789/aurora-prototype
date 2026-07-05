@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Mission Completed</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+
+margin:0;
+
+padding:0;
+
+box-sizing:border-box;
+
+}
+
+body{
+
+font-family:'Poppins',sans-serif;
+
+background:linear-gradient(180deg,#030712,#081b3d,#102d63);
+
+height:100vh;
+
+overflow:hidden;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+color:white;
+
+text-align:center;
+
+}
+
+.container{
+
+width:92%;
+
+max-width:850px;
+
+padding:40px;
+
+animation:fade 1.5s ease;
+
+}
+
+@keyframes fade{
+
+from{
+
+opacity:0;
+
+transform:translateY(30px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+h1{
+
+font-size:62px;
+
+color:#FFD54F;
+
+margin-bottom:25px;
+
+text-shadow:0 0 20px rgba(255,213,79,.45);
+
+}
+
+.message{
+
+font-size:28px;
+
+line-height:2;
+
+margin-bottom:45px;
+
+color:#FFFFFF;
+
+}
+
+button{
+
+padding:18px 48px;
+
+font-size:22px;
+
+font-weight:600;
+
+border:none;
+
+border-radius:50px;
+
+background:linear-gradient(90deg,#00C6FF,#3AAEFF);
+
+color:white;
+
+cursor:pointer;
+
+transition:.3s;
+
+box-shadow:0 0 25px rgba(0,198,255,.35);
+
+}
+
+button:hover{
+
+transform:translateY(-3px);
+
+box-shadow:0 0 40px rgba(0,198,255,.6);
+
+}
+
+#goodbye{
+
+margin-top:35px;
+
+font-size:22px;
+
+color:#FFE66D;
+
+display:none;
+
+line-height:1.8;
+
+}
+
+.fade{
+
+animation:fadeOut 2s forwards;
+
+}
+
+@keyframes fadeOut{
+
+to{
+
+opacity:0;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container" id="container">
+
+<h1>✅ MISSION COMPLETED</h1>
+
+<div class="message">
+
+Thank you for completing <b>Mission Unforgettable.</b><br><br>
+
+Happy Birthday, Sir G! 🎂💙<br><br>
+
+May your life always be filled with happiness, success and beautiful memories.
+
+</div>
+
+<button onclick="endMission()">
+
+🚪 End Mission
+
+</button>
+
+<div id="goodbye">
+
+You can now close this tab. 😊<br><br>
+
+See you next birthday... 🎉
+
+</div>
+
+```
+
+</div>
+
+<script>
+
+function endMission(){
+
+document.getElementById("container").classList.add("fade");
+
+setTimeout(function(){
+
+document.getElementById("container").classList.remove("fade");
+
+document.querySelector(".message").innerHTML=
+
+"💙 Thank you for visiting this little surprise.<br><br>May your smile always stay the same. ✨";
+
+document.querySelector("button").style.display="none";
+
+document.getElementById("goodbye").style.display="block";
+
+},2000);
+
+}  
+
+</script>
+
+<footer
+
+style="
+
+position:absolute;
+
+bottom:20px;
+
+left:50%;
+
+transform:translateX(-50%);
+
+font-size:15px;
+
+color:#D6EFFF;
+
+letter-spacing:1px;
+
+opacity:.85;
+
+">
+
+Mission Unforgettable • Made with ❤️ by Biya
+
+</footer>
+
+</body>
+
+</html>  
